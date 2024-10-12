@@ -1,73 +1,163 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="ca">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BarberShopCingle</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
+        * {
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
+        }
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+            line-height: 1.6;
         }
         header {
-            background-color: #333;
-            color: white;
+            background-color: #1f1f1f;
             padding: 20px;
             text-align: center;
+            color: white;
+        }
+        header h1 {
+            font-size: 2.5rem;
+            font-weight: bold;
+        }
+        nav {
+            background-color: #28a745;
+            padding: 10px;
+            text-align: center;
+        }
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-size: 1.1rem;
         }
         section {
-            padding: 20px;
+            padding: 40px 20px;
             text-align: center;
         }
         .container {
-            max-width: 800px;
+            max-width: 1200px;
             margin: auto;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
         }
-        h1 {
-            color: #333;
+        h2 {
+            color: #28a745;
+            font-size: 2rem;
+            margin-bottom: 20px;
         }
         p {
-            font-size: 1.2em;
-            line-height: 1.6;
-            color: #666;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+            color: #555;
         }
         .cta {
+            display: inline-block;
+            background-color: #28a745;
+            color: white;
+            padding: 15px 25px;
+            font-size: 1.2rem;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+        .cta:hover {
+            background-color: #218838;
+        }
+        .contact-form {
+            margin-top: 30px;
+            text-align: left;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .form-group button {
             background-color: #28a745;
             color: white;
             padding: 10px 20px;
-            margin-top: 20px;
-            display: inline-block;
+            border: none;
             border-radius: 5px;
-            text-decoration: none;
+            cursor: pointer;
+        }
+        .form-group button:hover {
+            background-color: #218838;
         }
         footer {
-            background-color: #333;
+            background-color: #1f1f1f;
             color: white;
-            padding: 10px;
             text-align: center;
+            padding: 20px 0;
+            margin-top: 40px;
         }
     </style>
 </head>
 <body>
 
 <header>
-    <h1>Bienvenido a BarberShopCingle</h1>
+    <h1>BarberShopCingle</h1>
 </header>
 
-<section>
+<nav>
+    <a href="#">Inici</a>
+    <a href="#serveis">Serveis</a>
+    <a href="#contacte">Contacte</a>
+</nav>
+
+<section id="serveis">
     <div class="container">
-        <h2>Reserva tu cita con nosotros</h2>
-        <p>¿Listo para un nuevo estilo? ¡Estamos aquí para ayudarte! Para reservar una cita, contáctanos directamente al siguiente número:</p>
-        <h3><a href="tel:+1234567890" class="cta">Llámanos: +1 234 567 890</a></h3>
-        <p>Nuestro equipo de atención al cliente estará encantado de asistirte con la mejor experiencia. ¡Nos vemos en BarberShopCingle!</p>
+        <h2>Reserva la teva cita</h2>
+        <p>Estàs preparat per a un nou estil? Reserva la teva cita amb nosaltres i obté l'atenció personalitzada que necessites.</p>
+        <p>Per a reservar, pots trucar-nos directament al número següent:</p>
+        <a href="tel:+1234567890" class="cta">Truca'ns: +1 234 567 890</a>
+        <p>També pots omplir el formulari de contacte per a qualsevol consulta, i et respondrem el més aviat possible.</p>
+
+        <div class="contact-form">
+            <h2>Formulari de contacte</h2>
+            <form action="URL_DEL_WEBHOOK_DE_MAKE" method="post">
+                <div class="form-group">
+                    <label for="nom">Nom:</label>
+                    <input type="text" id="nom" name="nom" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Correu electrònic:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="missatge">Missatge:</label>
+                    <textarea id="missatge" name="missatge" rows="4" required></textarea>
+                </div>
+                <div class="form-group">
+                    <button type="submit">Enviar consulta</button>
+                </div>
+            </form>
+        </div>
     </div>
 </section>
 
 <footer>
-    <p>&copy; 2024 BarberShopCingle. Todos los derechos reservados.</p>
+    <p>&copy; 2024 BarberShopCingle. Tots els drets reservats.</p>
 </footer>
 
 </body>
 </html>
+
